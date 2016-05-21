@@ -20,11 +20,15 @@ class Landing_page extends CI_Controller {
 		{
 			$this->load->view('add');
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> d4414783f53835d754d033559fd9fc760909c954
 	public function search()
 		{
 			$this->load->view('search');
 		}
+<<<<<<< HEAD
 	public function book_details()
 		{
 			$this->load->view('book_details');
@@ -46,6 +50,25 @@ class Landing_page extends CI_Controller {
 		$this->load->model('Book_details_model');
 		$this->Book_details_model->create_table();
 	  }
+=======
+	
+// public function index()
+// 	{
+// 		$this->load->view('landing_page');
+// 	}
+// public function signin()
+// 	{
+// 		$this->load->view('signin');
+// 	}
+// public function librarian()
+// 	{
+// 		$this->load->view('librarian');
+// 	}
+// public function add()
+// 	{
+// 		$this->load->view('add');
+// 	}
+>>>>>>> d4414783f53835d754d033559fd9fc760909c954
 
 
 	public function authentication()
