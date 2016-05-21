@@ -9,13 +9,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo script_tag('bootstrap.js')?>
     <?php echo script_tag('bootstrap.min.js')?>
     <?php echo script_tag('navigate.js')?>
+    <?php echo script_tag('select.js')?>
 
 		<title>Login to Legistify</title>
 	</head>
 	<body>
 
 		<div class="header">
-<<<<<<< HEAD
 					
        <div style="background-color:#f2effb;">
       <br>
@@ -31,7 +31,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="tag">
 			<p style="font-size:35px;font-family:Courier new;margin-left:37%;margin-top:2%;color:#514e4e">Select student.</p>
 			<p style="font-size:20px;font-family:Lato;margin-left:40%;color:#514e4e;margin-top:0%">Enter college ID continue</p>
-=======
 		<br>
 			<a href="/"> 
           <div class="tag">
@@ -41,13 +40,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
        </a>
 
-		<div class="tag">
+		<!-- <div class="tag">
 			<p style="font-size:35px;font-family:Courier new;margin-left:35%;margin-top:2%;color:#514e4e">Select student.</p>
 			<p style="font-size:20px;font-family:Lato;margin-left:40%;color:#514e4e;margin-top:0%">Enter college ID to continue</p>
->>>>>>> d4414783f53835d754d033559fd9fc760909c954
-		</div>
+		</div> -->
 
-		<div class="container" style="margin-top:2%">
+		<div class="container" style="margin-top:-1%">
 		<div class="row">
 
 			<div class="col-md-3" style="margin-left:3%"></div>
@@ -61,15 +59,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <input type="clg_id" class="form-control" id="clg_id" placeholder="Enter clg_id" required>
             </div>
           </div>
-    			
+    			<div class="form-group">        
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label><input type="checkbox" id="remember" value="remember"> Remember me</label>
+                </div>
+              </div>
+          </div>
     			
     			<div class="form-group">        
       				<div class="col-sm-offset-2 col-sm-10">
-<<<<<<< HEAD
-        				<button type="submit" class="btn btn-primary" style="width:20%" onclick="openURL(8)">Search</button>
-=======
         				<button type="submit" class="btn btn-primary" style="width:20%">Search</button>
->>>>>>> d4414783f53835d754d033559fd9fc760909c954
         				<br><br>
         				<!-- <p> Don't have an account ? <a href="/index.php/Landing_page/signup"> Sign Up</a> </p>  -->
       				</div>
@@ -78,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   		</div>
   		</div>	
 		</div>
-		<footer style="margin-left:1%;margin-top:12%;font-family: Lato">Copyright &copy; 2016 JECRC, All Rights Reserved. </footer>
+		<footer style="margin-left:1%;margin-top:7%;font-family: Lato">Copyright &copy; 2016 JECRC, All Rights Reserved. </footer>
     <footer style="margin-left:1%;font-family: Lato"> Developed by Swati Singhi </footer>
 	</body>
 </html>

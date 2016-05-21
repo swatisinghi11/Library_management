@@ -20,15 +20,11 @@ class Landing_page extends CI_Controller {
 		{
 			$this->load->view('add');
 		}
-<<<<<<< HEAD
 
-=======
->>>>>>> d4414783f53835d754d033559fd9fc760909c954
-	public function search()
+	public function select()
 		{
-			$this->load->view('search');
+			$this->load->view('select');
 		}
-<<<<<<< HEAD
 	public function book_details()
 		{
 			$this->load->view('book_details');
@@ -50,25 +46,7 @@ class Landing_page extends CI_Controller {
 		$this->load->model('Book_details_model');
 		$this->Book_details_model->create_table();
 	  }
-=======
 	
-// public function index()
-// 	{
-// 		$this->load->view('landing_page');
-// 	}
-// public function signin()
-// 	{
-// 		$this->load->view('signin');
-// 	}
-// public function librarian()
-// 	{
-// 		$this->load->view('librarian');
-// 	}
-// public function add()
-// 	{
-// 		$this->load->view('add');
-// 	}
->>>>>>> d4414783f53835d754d033559fd9fc760909c954
 
 
 	public function authentication()
@@ -109,6 +87,7 @@ class Landing_page extends CI_Controller {
 			echo json_encode($success);
 	}
 
+
 	public function book_details_submit()
 		{
 			$dsn ='mysqli://root:@localhost/legistifyphp';
@@ -121,5 +100,29 @@ class Landing_page extends CI_Controller {
 			$success=1;
 			$success=array("success"=>$success);
 			echo json_encode($success);
+		}
+
+
+	public function select_id()
+		{
+			$dsn ='mysqli://root:@localhost/legistifyphp';
+	     	$dbconnect = $this->load->database($dsn);
+		    $this->load->model('Students_model');
+		    $signin = array('clg_id'=>$this->input->post('clg_id'));
+		    $entered_clg_id = $signin["clg_id"];
+		    $query = $this->db->query('SELECT clg_id, uuid FROM users where clg_id="'.$entered_clg_id.'"');
+		    $row = $query->row();
+		    $uuid="none";
+		    $success=0;
+		    if($row){
+			    $clg_id= $row->clg_id;
+			    $uuid= $row->uuid;
+    			$success=1;    
+    		}
+    		else{
+    			$success=0;
+    		}
+    		$uuid_success=array("uuid"=>$uuid,"success"=>$success);
+			echo json_encode($uuid_success);
 		}
 	}

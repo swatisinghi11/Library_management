@@ -67,8 +67,7 @@ function openURL(index) {
 			window.open("supportfailed","_self");
 		}
 		else{
-			window.open("search","_self");
-<<<<<<< HEAD
+			window.open("select","_self");
 			// <a href="<?php echo site_url('controller/function/uri') ?>">Link</a>
 		}
 	}
@@ -87,8 +86,6 @@ function openURL(index) {
 		}
 		else{
 			window.open("selected_student","_self");
-=======
->>>>>>> d4414783f53835d754d033559fd9fc760909c954
 			// <a href="<?php echo site_url('controller/function/uri') ?>">Link</a>
 		}
 	}
