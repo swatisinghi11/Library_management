@@ -125,4 +125,11 @@ class Landing_page extends CI_Controller {
     		$uuid_success=array("uuid"=>$uuid,"success"=>$success);
 			echo json_encode($uuid_success);
 		}
+
+
+	public function mainpage_selected_student_initialisation()
+		{
+			$dsn ='mysqli://root:@localhost/legistifyphp';
+		    $dbconnect = $this->load->database($dsn);
+		}
 	}
