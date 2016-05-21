@@ -67,7 +67,7 @@ function openURL(index) {
 			window.open("supportfailed","_self");
 		}
 		else{
-			window.open("librarian","_self");
+			window.open("search","_self");
 			// <a href="<?php echo site_url('controller/function/uri') ?>">Link</a>
 		}
 	}
