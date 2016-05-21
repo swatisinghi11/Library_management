@@ -9,11 +9,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo script_tag('bootstrap.js')?>
     <?php echo script_tag('bootstrap.min.js')?>
     <?php echo script_tag('navigate.js')?>
-    <?php echo script_tag('add.js')?>
+    <?php echo script_tag('book_details.js')?>
 
 
 		<link rel="icon"  type="image/png" href="public/images/main_logo.png">
-		<title>Student Details</title>
+		<title>Book Details</title>
 	</head>
 	<body>
 
@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <br>
 		  <div class="pull-right" style="margin-right:2%;">
         <br>
-		    <button type="submit" class="btn btn-info" style="width:100%" onclick="openURL(6)">Search</button>
+		    <button type="submit" class="btn btn-info" style="width:100%" onclick="openURL(5)">Add student</button>
       </div>
     </div>
 		<div class="tag">
@@ -37,38 +37,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   			<form class="form-horizontal" role="form" id="signupform">
           <br><br>
 
-          		<div class="form-group">
-      				<label class="control-label col-sm-2">Name:</label>
-  					<div class="col-sm-4">
-    					<input type="name" class="form-control" id="first" placeholder="First Name" required>
-  					</div>
-  					<div class="col-sm-4">
-    					<input type="name" class="form-control" id="second" placeholder="Last Name" required>
-  					</div>
-    			</div>
+          		
 
           <div class="form-group">
-              <label class="control-label col-sm-2">Clg_id:</label>
+              <label class="control-label col-sm-2">Book Number</label>
             <div class="col-sm-8">
-              <input type="clg_id" class="form-control" id="clg_id" placeholder="Enter clg_ID" required>
+              <input type="Book_number" class="form-control" id="Book_number" placeholder="Enter Book_Number" required>
             </div>
           </div>
 
     			<div class="form-group">
-      				<label class="control-label col-sm-2" for="email">Branch</label>
+      				<label class="control-label col-sm-2" for="email">Book Name</label>
   					<div class="col-sm-8">
-    					<input type="branch" class="form-control" id="branch" placeholder="Enter branch" required>
+    					<input type="Book_name" class="form-control" id="Book_name" placeholder="Enter Book_Name" required>
   					</div>
     			</div>
 
     			<div class="form-group">
-      				<label class="control-label col-sm-2" for="pwd">B.tech year:</label>
+      				<label class="control-label col-sm-2" for="pwd">Books Author</label>
   					<div class="col-sm-8">          
-    					<input type="year" class="form-control" id="year" placeholder="Enter year" required>
+    					<input type="Books_Author" class="form-control" id="Books_author" placeholder="Enter Books_Author" required>
       				</div>
     			</div>
 
-    			
+    			<div class="form-group">
+              <label class="control-label col-sm-2" for="pwd">Publication</label>
+            <div class="col-sm-8">          
+              <input type="Publication" class="form-control" id="Publication" placeholder="Enter Publication" required>
+              </div>
+          </div>
               
         
     			<div class="form-group">        

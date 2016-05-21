@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Students_model extends CI_Model {
+class Students_library_model extends CI_Model {
   
   
   function __construct() 
@@ -16,13 +16,14 @@ class Students_model extends CI_Model {
         // $this->db->query($sql);
         // echo $this->db->affected_rows();
         // $this->db->set('uuid','UUID()',FALSE);
-        $this->clg_id = $data['clg_id'];
-        $this->firstname = $data['firstname'];
-        $this->lastname = $data['lastname'];
-        $this->branch = $data['branch'];
-        $this->year = $data['year'];
-
-        $this->db->insert('users',$this);
+        $this->std_id = $data['std_id'];
+        $this->book_number = $data['book_number'];
+        $this->book_name = $data['book_name'];
+        $this->issue_date = $data['issue_date'];
+        $this->ideal_return_date = $data['year'];
+        $this->actual_return_date = "none";
+        $this->fine = $data['fine'];
+        $this->db->insert('issue_return_details',$this);
   }  
 
   function create_table()
@@ -35,21 +36,27 @@ class Students_model extends CI_Model {
     /* Specify the table schema */
     $fields = array(
                     
-                    'clg_id' => array(
+                    'std_id' => array(
                                   'type' => 'VARCHAR',
                                   'constraint' => '255'
                               ),
-                    'firstname'=>array(
+                    'book_number'=>array(
                                     'type'=>'text'
                                     ),
-                    'lastname'=>array(
+                    'book_name'=>array(
                                     'type'=>'text'
                                     ),
-                    'branch'=>array(
+                    'issue_date'=>array(
                                     'type'=>'text'
                                     ),
-                    'year'=>array(
+                    'ideal_return_date'=>array(
                                     'type'=>'text'
+                                    ),
+                    'actual_return_date'=>array(
+                                    'type'=>'text'
+                                    ),
+                    'fine'=>array(
+                                    'type'=>'int'
                                     ),
                     // 'date TIMESTAMP DEFAULT CURRENT_TIMESTAMP'
               );
@@ -59,11 +66,11 @@ class Students_model extends CI_Model {
     
     
     /* Specify the primary key to the 'id' field */
-    $this->dbforge->add_key('clg_id', TRUE);
+    $this->dbforge->add_key('std_id', TRUE);
     
     
     /* Create the table (if it doesn't already exist) */
-    $this->dbforge->create_table('users', TRUE);
+    $this->dbforge->create_table('issue_return_details', TRUE);
     // echo "table successfully created";
   } 
 

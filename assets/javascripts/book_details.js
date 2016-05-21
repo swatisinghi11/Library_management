@@ -1,26 +1,25 @@
 $(document).ready(function(){
 	
 	var base_url = window.location.origin;
-	var post_url_localhost = base_url+"/Library_management/index.php/Landing_page/student_data_submit";
+	var post_url_localhost = base_url+"/Library_management/index.php/Landing_page/book_details_submit";
 	var post_url_openshift = base_url+"/index.php/Landing_page/user_data_submit";
 	
 	$("#signupform").submit(function(){
-		var first=$("#first").val();
-		var last=$('#second').val();
-		var clg_id = $('#clg_id').val();
-		var branch=$("#branch").val();
-		var year=$("#year").val();
+		var book_number=$("#Book_number").val();
+		var book_name=$('#Book_name').val();
+		var book_author = $('#Books_author').val();
+		var publication=$("#Publication").val();
 		{
 			// Storing SignUp details in signup credentials.
-			var student_credentials = {"clg_id":clg_id,"firstname":first,"lastname":last,"branch":branch,"year":year};
-			console.log("making ajax call...",student_credentials);
+			var book_credentials = {"book_number":book_number,"book_name":book_name,"book_author":book_author,"publication":publication};
+			console.log("making ajax call...",book_credentials);
 
 		// Sending SignUp credentials to the server through ajax call.
 
 				$.ajax({
     		    url: post_url_localhost, 
         		type: 'POST',
-        		data: student_credentials,
+        		data: book_credentials,
         		// dataType: 'json',			    
 
 			    //Receiving SignUp result from the server. 

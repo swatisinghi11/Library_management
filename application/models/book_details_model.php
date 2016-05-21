@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Students_model extends CI_Model {
+class book_details_model extends CI_Model {
   
   
   function __construct() 
@@ -16,13 +16,12 @@ class Students_model extends CI_Model {
         // $this->db->query($sql);
         // echo $this->db->affected_rows();
         // $this->db->set('uuid','UUID()',FALSE);
-        $this->clg_id = $data['clg_id'];
-        $this->firstname = $data['firstname'];
-        $this->lastname = $data['lastname'];
-        $this->branch = $data['branch'];
-        $this->year = $data['year'];
+        $this->book_number = $data['book_number'];
+        $this->bookname = $data['book_name'];
+        $this->author_name = $data['book_author'];
+        $this->publication = $data['publication'];
 
-        $this->db->insert('users',$this);
+        $this->db->insert('book_details',$this);
   }  
 
   function create_table()
@@ -35,22 +34,20 @@ class Students_model extends CI_Model {
     /* Specify the table schema */
     $fields = array(
                     
-                    'clg_id' => array(
+                    'book_number' => array(
                                   'type' => 'VARCHAR',
                                   'constraint' => '255'
                               ),
-                    'firstname'=>array(
+                    'bookname'=>array(
                                     'type'=>'text'
                                     ),
-                    'lastname'=>array(
+                    'author_name'=>array(
                                     'type'=>'text'
                                     ),
-                    'branch'=>array(
+                    'publication'=>array(
                                     'type'=>'text'
                                     ),
-                    'year'=>array(
-                                    'type'=>'text'
-                                    ),
+                    
                     // 'date TIMESTAMP DEFAULT CURRENT_TIMESTAMP'
               );
     
@@ -59,11 +56,11 @@ class Students_model extends CI_Model {
     
     
     /* Specify the primary key to the 'id' field */
-    $this->dbforge->add_key('clg_id', TRUE);
+    $this->dbforge->add_key('book_number', TRUE);
     
     
     /* Create the table (if it doesn't already exist) */
-    $this->dbforge->create_table('users', TRUE);
+    $this->dbforge->create_table('book_details', TRUE);
     // echo "table successfully created";
   } 
 

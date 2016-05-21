@@ -29,8 +29,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h3 style="font-size:3.3em;font-family:Courier new;margin-left:-5%;margin-top:25%;color:black"> The more you read, the more you learn. </h3>
         <br><br>
         <!-- <p style="margin-top:15%;font-family: Lato;font-size:2em">Sign In as:</p> -->
-        <button type="button" class="btn btn-default btn-lg" style="margin-top:5%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(1)">Search</button><br>
-        <button type="button" class="btn btn-default btn-lg" style="margin-top:5%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(5)">Add</button><br>
+        <button type="button" class="btn btn-default btn-lg" style="margin-top:5%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(6)">Select</button>
+        <button type="button" class="btn btn-default btn-lg" style="margin-top:5%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(7)">Add Book</button><br>
+
+        <button type="button" class="btn btn-default btn-lg" style="margin-top:5%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(5)">Add Student</button><br>
         <!-- <button type="button" class="btn btn-default btn-lg" style="margin-top:5%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(2)">Remove</button> -->
         
       </div>

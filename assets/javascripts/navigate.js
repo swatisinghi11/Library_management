@@ -67,9 +67,26 @@ function openURL(index) {
 			window.open("supportfailed","_self");
 		}
 		else{
-			window.open("librarian","_self");
+			window.open("search","_self");
 			// <a href="<?php echo site_url('controller/function/uri') ?>">Link</a>
 		}
 	}
-	
+	else if(index == 7){
+		if(lessResolution){
+			window.open("supportfailed","_self");
+		}
+		else{
+			window.open("book_details","_self");
+			// <a href="<?php echo site_url('controller/function/uri') ?>">Link</a>
+		}
+	}
+	else if(index == 8){
+		if(lessResolution){
+			window.open("supportfailed","_self");
+		}
+		else{
+			window.open("selected_student","_self");
+			// <a href="<?php echo site_url('controller/function/uri') ?>">Link</a>
+		}
+	}
 }
