@@ -15,23 +15,54 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title>Library</title>
   </head>
   <body>
-		<div>
-		  <div class="container" style="border-bottom: thin solid #d3d3d3;">
-		  		<div style="float:left; width:80%;">
-		  			<h4 id= "user_name"> </h4>
-		  		</div>
-		  		<div style="float:right; width:20%;">	
-		    		<button type="button" class="btn btn-default navbar-btn" style="float:right;" onclick="logout()">Sign Out</button>
-		  		</div>
+		<div class="row">
+			<div class="col-md-9" style="border-bottom: thin solid #d3d3d3;height:15%">
+				<br>
+    			<p style="font-family:Papyrus;font-size:200%;margin-left:20%;text-align:center;letter-spacing:.4em"><strong><span style="color:	#3f3347">J</span><span style="color:#cec846">E</span><span style="color:#29743d">C</span><span style="color:#e5b08d">R</span><span style="color:#e79090">C</span><span style="letter-spacing:.25em"><span style="color:#8e0029">L</span><span style="color:	#008080">i</span><span style="color:#493434">b</span><span style="color:	#f6c62f">r</span><span style="color:	#d02929">a</span><span style="color:#93716c">r</span><span style="color:#25947b">y</span></span> </strong></p>
+			</div>
 
-		  </div>
-		</div>
-		<div id="left_panel" style="padding: 10px;float:left; width:40%; border-right: thin solid #d3d3d3;">
 			
+
+			<div class="col-md-3" style=" border-bottom: thin solid #d3d3d3; height:71px">
+				<div class="row">
+					<div class="col-md-6">
+						
+					</div>
+					<div class="col-md-4">
+						<br>
+						<button type="submit" class="btn btn-info" style="width:100%" onclick="logout()"> Log Out</button>
+					</div>
+				</div>
+				
+			</div>
 		</div>
-		<div id="right_panel" style="padding: 10px; float:left; width:60%;">
-			<h2 style="margin-left:20%"> Details</h2>
+
+
+		<div class="row">
+			<div class="col-md-3" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:39.4em;border-right:thin solid #d3d3d3"></div>
+			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+				<p style="text-align:center">S.No.</p>
+			</div>
+			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+				<p style="text-align:center">Book number</p>
+			</div>
+			<div class="col-md-3" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+				<p style="text-align:center">Book name</p>
+			</div>
+			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+				<p style="text-align:center">Issued on</p>
+			</div>
+			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+				<p style="text-align:center">Ideal Return date</p>
+			</div>
+			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+				<p style="text-align:center">Actual Return date</p>
+			</div>
+			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+				<p style="text-align:center">Fine</p>
+			</div>
 		</div>
-		
+			
+
 	</body>
 </html>

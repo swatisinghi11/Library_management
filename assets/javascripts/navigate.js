@@ -85,7 +85,35 @@ function openURL(index) {
 			window.open("supportfailed","_self");
 		}
 		else{
-			window.open("selected_student","_self");
+			var current_url = String(window.location.href);
+			var index = current_url.indexOf("issue_return_status/");
+			var uuid = current_url.substr(index+20)
+			console.log(uuid);
+			window.open("http://localhost/Library_management/index.php/Landing_page/issue/"+uuid,"_self");
+			// <a href="<?php echo site_url('controller/function/uri') ?>">Link</a>
+		}
+	}
+	else if(index == 9){
+		if(lessResolution){
+			window.open("supportfailed","_self");
+		}
+		else{
+			var current_url = String(window.location.href);
+			var index = current_url.indexOf("issue_return_status/");
+			var uuid = current_url.substr(index+20)
+			console.log(uuid);
+
+			window.open("http://localhost/Library_management/index.php/Landing_page/selected_student/"+uuid,"_self");
+			// <a href="<?php echo site_url('controller/function/uri') ?>">Link</a>
+		}
+	}
+	else if(index == 10){
+		if(lessResolution){
+			window.open("supportfailed","_self");
+		}
+		else{
+
+			window.open("http://localhost/Library_management/index.php/Landing_page/issue_return_status","_self");
 			// <a href="<?php echo site_url('controller/function/uri') ?>">Link</a>
 		}
 	}

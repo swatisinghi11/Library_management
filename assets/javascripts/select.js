@@ -23,7 +23,7 @@ $(document).ready(function(){
 			    	var uuid=select_id_result.uuid;
 			    	if(select_id_result.success == 1){
 				    	console.log("successfully signed in!!!!!!!!!!!!!!");
-				    	window.open("selected_student/"+uuid,"_self");
+				    	window.open("issue_return_status/"+uuid,"_self");
 				    }
 				    else {
 				    	alert("Username Does not exists!!!");

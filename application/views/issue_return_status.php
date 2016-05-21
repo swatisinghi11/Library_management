@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<title>JECRC Library</title>
 	</head>
-	  <body style="background-image:url(<?php echo base_url('assets/images/lib3.jpg')?>); width: 25%; background-size: 100%;background-position: center center;background-repeat: no-repeat;">
+	  <body style="background-image:url(<?php echo base_url('assets/images/book.jpg')?>); width: 25%; background-size: 100%;background-position: center center;background-repeat: no-repeat;">
 		
 	<br>
 	<div class="header">
@@ -26,11 +26,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-md-4">
 			</div>
 			<div class="col-md-6">
-				<h3 style="font-size:3.3em;font-family:Courier new;margin-left:-5%;margin-top:25%;color:black"> Read.Explore.Invent. </h3>
+				<h3 style="font-size:3.3em;font-family:Courier new;margin-left:-5%;margin-top:25%;color:black"> Action: </h3>
 				<br><br>
-				<p style="margin-top:15%;font-family: Lato;font-size:2em">Sign In as:</p>
-				<button type="button" class="btn btn-default btn-lg" style="margin-top:5%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(1)">Librarian</button>
-				<button type="button" class="btn btn-default btn-lg" style="margin-top:5%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(2)">Student</button>
+				<button type="button" class="btn btn-default btn-lg" style="margin-top:3%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(8)">Issue</button><br>
+				<button type="button" class="btn btn-default btn-lg" style="margin-top:3%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(2)">Return</button><br>
+				<button type="button" class="btn btn-default btn-lg" style="margin-top:3%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(9)">Status</button>
 				
 			</div>
 		</div>

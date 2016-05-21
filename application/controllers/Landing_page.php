@@ -35,6 +35,16 @@ class Landing_page extends CI_Controller {
 			$this->load->view('selected_student');
 
 		}
+
+	public function issue_return_status()
+		{
+			$this->load->view('issue_return_status');
+		}
+	public function issue()
+		{
+			$this->load->view('issue');
+		}
+
 	function __construct() 
 	  {
 	    /* Call the Model constructor */
