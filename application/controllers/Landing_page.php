@@ -30,9 +30,57 @@ class Landing_page extends CI_Controller {
 			$this->load->view('book_details');
 		}
 
-	public function selected_student()
+	public function selected_student($uuid)
 		{
-			$this->load->view('selected_student');
+			$dsn ='mysqli://root:@localhost/legistifyphp';
+			$dbconnect = $this->load->database($dsn);
+			$dynamic_data=array('current_student'=>array(),'current_student_issue_status'=>array());
+
+		    $this->load->model('Students_model');
+		    $query = $this->db->query('SELECT uuid,clg_id,firstname,lastname,branch,year FROM users where uuid="'.$uuid.'"');
+		    $row = $query->row();
+		    $uuid="none";
+		    $success=0;
+		    if($row){
+		    	$uuid=$row->uuid;
+			    $clg_id= $row->clg_id;
+			    $firstname= $row->firstname;
+			    $lastname= $row->lastname;
+			    $branch= $row->branch;
+			    $year= $row->year;
+    			$success=1;    
+    		}
+    		else{
+    			$success=0;
+    		}
+
+		    $current_student=array("uuid"=>$uuid,"clg_id"=>$clg_id,"firstname"=>$firstname,"lastname"=>$lastname,"branch"=>$branch,"year"=>$year);
+		    $dynamic_data['current_student']=$current_student;
+
+		    $this->load->model('Students_library_model');
+		    $query = $this->db->query('SELECT uuid,std_id,book_number,book_name,issue_date,ideal_return_date,actual_return_date,fine FROM issue_return_details where uuid="'.$uuid.'"');
+		    $row = $query->row();
+		    $uuid="none";
+		    $success=0;
+		    if($row){
+		    	$uuid=$row->uuid;
+			    $std_id= $row->std_id;
+			    $book_number= $row->book_number;
+			    $book_name= $row->book_name;
+			    $issue_date= $row->issue_date;
+			    $ideal_return_date= $row->ideal_return_date;
+			    $actual_return_date= $row->actual_return_date;
+			    $fine= $row->fine;
+    			$success=1;    
+    		}
+    		else{
+    			$success=0;
+    		}
+
+    		$current_student_issue_status=array("uuid"=>$uuid,"std_id"=>$std_id,"book_number"=>$book_number,"book_name"=>$book_name,"issue_date"=>$issue_date,"ideal_return_date"=>$ideal_return_date,"actual_return_date"=>$actual_return_date,"fine"=>$fine);
+		    $dynamic_data['current_student_issue_status']=$current_student_issue_status;
+
+			$this->load->view('selected_student',$dynamic_data);
 
 		}
 

@@ -39,30 +39,66 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 		<div class="row">
-			<div class="col-md-3" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:39.4em;border-right:thin solid #d3d3d3"></div>
-			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-				<p style="text-align:center">S.No.</p>
+			<div class="col-md-3" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-right:thin solid #d3d3d3">
+				<p style="font-family: Lato;font-size:180%">Name: <?php echo $current_student['firstname']." ".$current_student['lastname'];
+				?></p>
+				<p style="font-family: Lato;font-size:180%">College id: <?php echo $current_student['clg_id']; ?></p>
+				<p style="font-family: Lato;font-size:180%">Branch: <?php echo $current_student['branch']; ?></p>
+				<p style="font-family: Lato;font-size:180%">Year: <?php echo $current_student['year']; ?></p>
+				
 			</div>
 			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-				<p style="text-align:center">Book number</p>
+				<p style="text-align:center;font-family: Lato;font-size:120%">S.No.</p>
+			</div>
+			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+				<p style="text-align:center;font-family: Lato;font-size:120%">Book number</p>
 			</div>
 			<div class="col-md-3" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-				<p style="text-align:center">Book name</p>
+				<p style="text-align:center;font-family: Lato;font-size:120%">Book name</p>
 			</div>
 			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-				<p style="text-align:center">Issued on</p>
+				<p style="text-align:center;font-family: Lato;font-size:120%">Issued on</p>
 			</div>
 			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-				<p style="text-align:center">Ideal Return date</p>
+				<p style="text-align:center;font-family: Lato;font-size:120%">Ideal Return date</p>
 			</div>
 			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-				<p style="text-align:center">Actual Return date</p>
+				<p style="text-align:center;font-family: Lato;font-size:120%">Actual Return date</p>
 			</div>
 			<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-				<p style="text-align:center">Fine</p>
+				<p style="text-align:center;font-family: Lato;font-size:120%">Fine</p>
 			</div>
 		</div>
-			
+		
+		<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+			<p style="text-align:center;font-size:110%;">1</p>
+		</div>
+		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['book_number']; ?></p>
+		</div>
+		<div class="col-md-3" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['book_name']; ?></p>
+
+		</div>
+		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['issue_date']; ?></p>
+
+		</div>
+		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['ideal_return_date']; ?></p>
+
+		</div>
+		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['actual_return_date']; ?></p>
+
+		</div>
+		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
+			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['fine']; ?></p>
+
+		</div>
+
 
 	</body>
 </html>
