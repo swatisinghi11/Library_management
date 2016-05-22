@@ -112,8 +112,11 @@ function openURL(index) {
 			window.open("supportfailed","_self");
 		}
 		else{
-
-			window.open("http://localhost/Library_management/index.php/Landing_page/issue_return_status","_self");
+			var current_url = String(window.location.href);
+			var index = current_url.indexOf("issue/");
+			var uuid = current_url.substr(index+6)
+			console.log(uuid);
+			window.open("http://localhost/Library_management/index.php/Landing_page/issue_return_status/"+uuid,"_self");
 			// <a href="<?php echo site_url('controller/function/uri') ?>">Link</a>
 		}
 	}
