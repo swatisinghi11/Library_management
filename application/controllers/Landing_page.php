@@ -142,4 +142,52 @@ class Landing_page extends CI_Controller {
 			$dsn ='mysqli://root:@localhost/legistifyphp';
 		    $dbconnect = $this->load->database($dsn);
 		}
-	}
+	
+
+	public function issue_details()
+		{
+			$dsn ='mysqli://root:@localhost/legistifyphp';
+		    $dbconnect = $this->load->database($dsn);
+			$all_data=array('book_details'=>array(),'clg_id_and_uuid'=>array());
+
+
+		    $this->load->model('book_details_model');
+		    $issue_info = array('uuid'=>$this->input->post('uuid'),'book_number'=>$this->input->post('book_number'));
+		    $entered_book_number= $issue_info['book_number'];
+		    $entered_uuid= $issue_info['uuid'];
+
+		    $query = $this->db->query('SELECT book_number, book_name FROM book_details where book_number="'.$entered_book_number.'"');
+		    $row = $query->row();
+		    $book_number="-";
+		    $success=0;
+		    if($row){
+			    $book_number= $row->book_number;
+			    $book_name= $row->book_name;
+    			$success=1;    
+    		}
+    		else{
+    			$success=0;
+    		}
+    		$book_number_success=array("book_number"=>$book_number,"book_name"=>$book_name,"success"=>$success);
+    		$all_data['book_details']=$book_number_success;
+			// echo json_encode($book_number_success);
+
+		    $this->load->model('Students_model');
+		    $query = $this->db->query('SELECT clg_id, uuid  FROM users where uuid="'.$entered_uuid.'"');
+		    $row = $query->row();
+		    $uuid="none";
+		    $success=0;
+		    if($row){
+			    $uuid= $row->uuid;
+			    $clg_id= $row->clg_id;
+    			$success=1;    
+    		}
+    		else{
+    			$success=0;
+    		}
+    		$clg_id_and_uuid=array("uuid"=>$uuid,"clg_id"=>$clg_id);
+    		$all_data['clg_id_and_uuid']=$clg_id_and_uuid;
+			echo json_encode($all_data);
+
+		}
+}

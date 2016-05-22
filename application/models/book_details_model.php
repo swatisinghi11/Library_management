@@ -17,7 +17,7 @@ class book_details_model extends CI_Model {
         // echo $this->db->affected_rows();
         // $this->db->set('uuid','UUID()',FALSE);
         $this->book_number = $data['book_number'];
-        $this->bookname = $data['book_name'];
+        $this->book_name = $data['book_name'];
         $this->author_name = $data['book_author'];
         $this->publication = $data['publication'];
 
@@ -38,7 +38,7 @@ class book_details_model extends CI_Model {
                                   'type' => 'VARCHAR',
                                   'constraint' => '255'
                               ),
-                    'bookname'=>array(
+                    'book_name'=>array(
                                     'type'=>'text'
                                     ),
                     'author_name'=>array(

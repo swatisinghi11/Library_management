@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo script_tag('bootstrap.js')?>
     <?php echo script_tag('bootstrap.min.js')?>
     <?php echo script_tag('navigate.js')?>
+    <?php echo script_tag('issue.js')?>
 
 		<link rel="icon"  type="image/png" href="public/images/main_logo.png">
 		<title>Issue Details</title>
@@ -43,15 +44,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
           </div>
 
-    			<div class="form-group">
-      				<label class="control-label col-sm-2" for="email">Book name</label>
-  					<div class="col-sm-8">
-    					<input type="Book_name" class="form-control" id="Book_name" placeholder="Enter Book name" required>
-  					</div>
-    			</div>
-
-    			
-          
 
     			<div class="form-group">        
       				<div class="col-sm-offset-2 col-sm-10">

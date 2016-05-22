@@ -15,14 +15,14 @@ class Students_library_model extends CI_Model {
     // $signup = "INSERT INTO users VALUES (".$swati['uuid'].",".$swati['username'].",".$swati['lawyer'].",".$swati['email'].",".$swati['password'].",".$swati['firstname'].", ".$swati['lastname'].",".$swati['imageId'].",".$swati['details'].",)";
         // $this->db->query($sql);
         // echo $this->db->affected_rows();
-        // $this->db->set('uuid','UUID()',FALSE);
+        $this->db->set('uuid','UUID()',FALSE);
         $this->std_id = $data['std_id'];
         $this->book_number = $data['book_number'];
         $this->book_name = $data['book_name'];
-        $this->issue_date = $data['issue_date'];
-        $this->ideal_return_date = $data['year'];
-        $this->actual_return_date = "none";
-        $this->fine = $data['fine'];
+        $this->issue_date = date('d-m-Y');
+        $this->ideal_return_date = date('d-m-Y', strtotime(' +10 day'));
+        $this->actual_return_date = "-";
+        $this->fine = 0;
         $this->db->insert('issue_return_details',$this);
   }  
 
@@ -35,6 +35,9 @@ class Students_library_model extends CI_Model {
     
     /* Specify the table schema */
     $fields = array(
+                    'uuid' => array(
+                                  'type' => 'text'
+                              ),
                     
                     'std_id' => array(
                                   'type' => 'VARCHAR',
