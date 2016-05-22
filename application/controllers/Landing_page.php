@@ -187,6 +187,10 @@ class Landing_page extends CI_Controller {
     		}
     		$clg_id_and_uuid=array("uuid"=>$uuid,"clg_id"=>$clg_id);
     		$all_data['clg_id_and_uuid']=$clg_id_and_uuid;
+
+    		$this->load->model('Students_library_model');
+			$this->Students_library_model->create_table();
+			$this->Students_library_model->insert_row($all_data);
 			echo json_encode($all_data);
 
 		}

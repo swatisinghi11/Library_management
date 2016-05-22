@@ -15,10 +15,10 @@ class Students_library_model extends CI_Model {
     // $signup = "INSERT INTO users VALUES (".$swati['uuid'].",".$swati['username'].",".$swati['lawyer'].",".$swati['email'].",".$swati['password'].",".$swati['firstname'].", ".$swati['lastname'].",".$swati['imageId'].",".$swati['details'].",)";
         // $this->db->query($sql);
         // echo $this->db->affected_rows();
-        $this->db->set('uuid','UUID()',FALSE);
-        $this->std_id = $data['std_id'];
-        $this->book_number = $data['book_number'];
-        $this->book_name = $data['book_name'];
+        $this->uuid=$data['clg_id_and_uuid']['uuid'];
+        $this->std_id = $data['clg_id_and_uuid']['clg_id'];
+        $this->book_number = $data['book_details']['book_number'];
+        $this->book_name = $data['book_details']['book_name'];
         $this->issue_date = date('d-m-Y');
         $this->ideal_return_date = date('d-m-Y', strtotime(' +10 day'));
         $this->actual_return_date = "-";
