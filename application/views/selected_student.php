@@ -69,36 +69,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<p style="text-align:center;font-family: Lato;font-size:120%">Fine</p>
 			</div>
 		</div>
-		
+
+
+		<?php 
+
+		foreach ($book_list as $row) {
+		echo '
 		<div class="row">
 		<div class="col-md-3"></div>
 		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
 			<p style="text-align:center;font-size:110%;">1</p>
 		</div>
 		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['book_number']; ?></p>
+			<p style="text-align:center;font-size:110%">'.$row["book_number"].'</p>
 		</div>
 		<div class="col-md-3" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['book_name']; ?></p>
+			<p style="text-align:center;font-size:110%">'.$row["book_name"].'</p>
 
 		</div>
 		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['issue_date']; ?></p>
+			<p style="text-align:center;font-size:110%">'.$row['issue_date'].'</p>
 
 		</div>
 		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['ideal_return_date']; ?></p>
+			<p style="text-align:center;font-size:110%">'.$row["ideal_return_date"].'</p>
 
 		</div>
 		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['actual_return_date']; ?></p>
+			<p style="text-align:center;font-size:110%">'.$row["actual_return_date"].'</p>
 
 		</div>
 		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-			<p style="text-align:center;font-size:110%"><?php echo $current_student_issue_status['fine']; ?></p>
+			<p style="text-align:center;font-size:110%">'.$row["fine"].'</p>
 
 		</div>
-
+		'
+	;}
+	?>
 
 	</body>
 </html>

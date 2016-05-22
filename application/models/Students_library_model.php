@@ -16,7 +16,7 @@ class Students_library_model extends CI_Model {
         // $this->db->query($sql);
         // echo $this->db->affected_rows();
         $this->uuid=$data['clg_id_and_uuid']['uuid'];
-        $this->std_id = $data['clg_id_and_uuid']['clg_id'];
+        $this->clg_id = $data['clg_id_and_uuid']['clg_id'];
         $this->book_number = $data['book_details']['book_number'];
         $this->book_name = $data['book_details']['book_name'];
         $this->issue_date = date('d-m-Y');
@@ -31,15 +31,12 @@ class Students_library_model extends CI_Model {
     // echo "i am in";
     /* Load db_forge - used to create databases and tables */
     $this->load->dbforge();
-    
-    
     /* Specify the table schema */
     $fields = array(
                     'uuid' => array(
                                   'type' => 'text'
                               ),
-                    
-                    'std_id' => array(
+                    'clg_id' => array(
                                   'type' => 'VARCHAR',
                                   'constraint' => '255'
                               ),
@@ -60,7 +57,7 @@ class Students_library_model extends CI_Model {
                                     ),
                     'fine'=>array(
                                     'type'=>'int'
-                                    ),
+                                    )
                     // 'date TIMESTAMP DEFAULT CURRENT_TIMESTAMP'
               );
     
@@ -69,7 +66,10 @@ class Students_library_model extends CI_Model {
     
     
     /* Specify the primary key to the 'id' field */
-    $this->dbforge->add_key('std_id', TRUE);
+    // $this->dbforge->add_key('book_number,clg_id', TRUE);
+
+    // $this->dbforge->add_key('clg_id', TRUE);
+    // $this->dbforge->add_key('book_number', TRUE);
     
     
     /* Create the table (if it doesn't already exist) */

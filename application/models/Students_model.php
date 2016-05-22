@@ -53,7 +53,7 @@ class Students_model extends CI_Model {
                                     ),
                     'year'=>array(
                                     'type'=>'text'
-                                    ),
+                                    )
                     // 'date TIMESTAMP DEFAULT CURRENT_TIMESTAMP'
               );
     

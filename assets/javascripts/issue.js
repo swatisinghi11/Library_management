@@ -26,7 +26,7 @@ $(document).ready(function(){
 			    //Receiving SignUp result from the server. 
 			    success : function(issue_result){
 			    	console.log(issue_result);
-			    	if(issue_result.book_details.success == 1){
+			    	if(issue_result.book_details.success == 1 && issue_result.clg_id_and_uuid.success1==1){
 				    	console.log("successfully issued!!!!!!!!!!!!!!");
 				    	// window.open("issue_return_status/"+uuid,"_self");
 				    }
