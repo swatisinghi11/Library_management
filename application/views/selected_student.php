@@ -103,6 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<p style="text-align:center;font-size:110%">'.$row["fine"].'</p>
 
 		</div>
+		</div>
 		'
 	;}
 	?>

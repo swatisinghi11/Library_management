@@ -77,7 +77,7 @@ class Landing_page extends CI_Controller {
     	}
 		    $dynamic_data['book_list']=$book_list;
 
-			$this->load->view('selected_student',$dynamic_data);
+			$this->load->view('selected_student',$dynamic_data,$i);
 
 		}
 
