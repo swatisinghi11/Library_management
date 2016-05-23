@@ -283,7 +283,7 @@ class Landing_page extends CI_Controller {
     			$fine=100;
     		}
     		// "date_difference"=>$date_difference,
-    		$update_data=array("actual_return_date"=>$actual_return_date,"fine"=>$fine);
+    		$update_data=array("actual_return_date"=>$actual_return_date,"fine"=>$fine,"uuid"=>$uuid,"book_number"=>$book_number);
     		$this->load->model('Students_library_model');
 			$this->Students_library_model->create_table();
 			$this->Students_library_model->update_fine($update_data);

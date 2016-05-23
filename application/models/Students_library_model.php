@@ -27,8 +27,11 @@ class Students_library_model extends CI_Model {
   }  
 
   function update_fine($update_data){
-      $this->db->where('actual_return_date',$update_data["actual_return_date"]);
-      $this->db->where('fine',$update_data["fine"]);
+      $this->db->where('book_number',$update_data["book_number"]);
+      $this->db->where('uuid',$update_data["uuid"]);
+      $data=array('actual_return_date'=>$update_data["actual_return_date"],'fine'=>$update_data["fine"]);
+      $this->db->update('issue_return_details',$data);      
+
   }
 
   function create_table()
