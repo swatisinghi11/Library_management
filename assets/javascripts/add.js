@@ -26,6 +26,8 @@ $(document).ready(function(){
 			    //Receiving SignUp result from the server. 
 			    success : function(signup_result){
 			    	console.log(signup_result);
+			    	alert("Student added");
+			    	window.open("librarian","_self");
 			    	// window.open("","_self");
 			  //       if(signup_result.success==1 && signup_result.lawyer == '1')
 					// {

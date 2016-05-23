@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo script_tag('bootstrap.js')?>
     <?php echo script_tag('bootstrap.min.js')?>
     <?php echo script_tag('navigate.js')?>
-    <?php echo script_tag('issue.js')?>
+    <?php echo script_tag('return.js')?>
 
 		<link rel="icon"  type="image/png" href="public/images/main_logo.png">
 		<title>Issue Details</title>
@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     			<div class="form-group">        
       				<div class="col-sm-offset-2 col-sm-10">
-        				<button type="submit" class="btn btn-primary" style="width:20%;margin-left:10%;margin-top:-3%">Issue</button>
+        				<button type="submit" class="btn btn-primary" style="width:20%;margin-left:10%;margin-top:-3%">Return</button>
       				</div>
     			</div>
 

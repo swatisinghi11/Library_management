@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h3 style="font-size:3.3em;font-family:Courier new;margin-left:-5%;margin-top:25%;color:black"> Action: </h3>
 				<br><br>
 				<button type="button" class="btn btn-default btn-lg" style="margin-top:3%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(8)">Issue</button><br>
-				<button type="button" class="btn btn-default btn-lg" style="margin-top:3%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(2)">Return</button><br>
+				<button type="button" class="btn btn-default btn-lg" style="margin-top:3%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(11)">Return</button><br>
 				<button type="button" class="btn btn-default btn-lg" style="margin-top:3%;font-family: Lato;font-size:2em;width:36%" onclick="openURL(9)">Status</button>
 				
 			</div>

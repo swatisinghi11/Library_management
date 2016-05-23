@@ -1,0 +1,70 @@
+[1mdiff --git a/application/controllers/Landing_page.php b/application/controllers/Landing_page.php[m
+[1mindex 653a25b..da02ea4 100644[m
+[1m--- a/application/controllers/Landing_page.php[m
+[1m+++ b/application/controllers/Landing_page.php[m
+[36m@@ -34,7 +34,7 @@[m [mclass Landing_page extends CI_Controller {[m
+ 		{[m
+ 			$dsn ='mysqli://root:@localhost/legistifyphp';[m
+ 			$dbconnect = $this->load->database($dsn);[m
+[31m-			$dynamic_data=array('current_student'=>array(),'current_student_issue_status'=>array());[m
+[32m+[m			[32m$dynamic_data=array('current_student'=>array(),'book_list'=>array());[m
+ [m
+ 		    $this->load->model('Students_model');[m
+ 		    $query = $this->db->query('SELECT uuid,clg_id,firstname,lastname,branch,year FROM users where uuid="'.$uuid.'"');[m
+[36m@@ -57,28 +57,26 @@[m [mclass Landing_page extends CI_Controller {[m
+ 		    $current_student=array("uuid"=>$uuid,"clg_id"=>$clg_id,"firstname"=>$firstname,"lastname"=>$lastname,"branch"=>$branch,"year"=>$year);[m
+ 		    $dynamic_data['current_student']=$current_student;[m
+ [m
+[31m-		    $this->load->model('Students_library_model');[m
+[31m-		    $query = $this->db->query('SELECT uuid,std_id,book_number,book_name,issue_date,ideal_return_date,actual_return_date,fine FROM issue_return_details where uuid="'.$uuid.'"');[m
+[31m-		    $row = $query->row();[m
+[31m-		    $uuid="none";[m
+[31m-		    $success=0;[m
+[31m-		    if($row){[m
+[31m-		    	$uuid=$row->uuid;[m
+[31m-			    $std_id= $row->std_id;[m
+[31m-			    $book_number= $row->book_number;[m
+[31m-			    $book_name= $row->book_name;[m
+[31m-			    $issue_date= $row->issue_date;[m
+[31m-			    $ideal_return_date= $row->ideal_return_date;[m
+[31m-			    $actual_return_date= $row->actual_return_date;[m
+[31m-			    $fine= $row->fine;[m
+[31m-    			$success=1;    [m
+[31m-    		}[m
+[31m-    		else{[m
+[31m-    			$success=0;[m
+[31m-    		}[m
+ [m
+[31m-    		$current_student_issue_status=array("uuid"=>$uuid,"std_id"=>$std_id,"book_number"=>$book_number,"book_name"=>$book_name,"issue_date"=>$issue_date,"ideal_return_date"=>$ideal_return_date,"actual_return_date"=>$actual_return_date,"fine"=>$fine);[m
+[31m-		    $dynamic_data['current_student_issue_status']=$current_student_issue_status;[m
+[32m+[m		[32m    $this->load->model('Students_library_model',TRUE);[m
+[32m+[m		[32m    $book_list=array();[m
+[32m+[m		[32m    $query = $this->db->query('SELECT uuid,clg_id,book_number,book_name,issue_date,ideal_return_date,actual_return_date,fine FROM issue_return_details where uuid="'.$uuid.'"');[m
+[32m+[m		[32m    $i=0;[m
+[32m+[m		[32m    foreach ($query->result() as $row)[m
+[32m+[m				[32m{[m
+[32m+[m					[32m$i++;[m
+[32m+[m			[41m    [m	[32m$uuid=$row->uuid;[m
+[32m+[m				[32m    $clg_id= $row->clg_id;[m
+[32m+[m				[32m    $book_number= $row->book_number;[m
+[32m+[m				[32m    $book_name= $row->book_name;[m
+[32m+[m				[32m    $issue_date= $row->issue_date;[m
+[32m+[m				[32m    $ideal_return_date= $row->ideal_return_date;[m
+[32m+[m				[32m    $actual_return_date= $row->actual_return_date;[m
+[32m+[m				[32m    $fine= $row->fine;[m
+[32m+[m[41m    [m				[32m$current_student_issue_status=array("uuid"=>$uuid,"clg_id"=>$clg_id,"book_number"=>$book_number,"book_name"=>$book_name,"issue_date"=>$issue_date,"ideal_return_date"=>$ideal_return_date,"actual_return_date"=>$actual_return_date,"fine"=>$fine);[m
+[32m+[m[41m    [m				[32m$book_list[]=$current_student_issue_status;[m
+[32m+[m[41m    [m	[32m}[m
+[32m+[m		[32m    $dynamic_data['book_list']=$book_list;[m
+ [m
+ 			$this->load->view('selected_student',$dynamic_data);[m
+ [m
+[36m@@ -224,16 +222,16 @@[m [mclass Landing_page extends CI_Controller {[m
+ 		    $query = $this->db->query('SELECT clg_id, uuid  FROM users where uuid="'.$entered_uuid.'"');[m
+ 		    $row = $query->row();[m
+ 		    $uuid="none";[m
+[31m-		    $success=0;[m
+[32m+[m		[32m    $success1=0;[m
+ 		    if($row){[m
+ 			    $uuid= $row->uuid;[m
+ 			    $clg_id= $row

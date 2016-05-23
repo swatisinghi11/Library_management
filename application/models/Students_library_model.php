@@ -26,6 +26,11 @@ class Students_library_model extends CI_Model {
         $this->db->insert('issue_return_details',$this);
   }  
 
+  // function update_booking($update_data){
+  //     $this->db->where('actual_return_date',$update_data["actual_return_date"]);
+  //     $this->db->where('fine',$update_data["fine"]);
+  // }
+
   function create_table()
   { 
     // echo "i am in";
@@ -41,7 +46,8 @@ class Students_library_model extends CI_Model {
                                   'constraint' => '255'
                               ),
                     'book_number'=>array(
-                                    'type'=>'text'
+                                    'type' => 'VARCHAR',
+                                  'constraint' => '255'
                                     ),
                     'book_name'=>array(
                                     'type'=>'text'
@@ -64,12 +70,11 @@ class Students_library_model extends CI_Model {
     /* Add the field before creating the table */
     $this->dbforge->add_field($fields);
     
+    // $this->dbforge->add_key('book_number', TRUE);
+
     
     /* Specify the primary key to the 'id' field */
-    // $this->dbforge->add_key('book_number,clg_id', TRUE);
-
-    // $this->dbforge->add_key('clg_id', TRUE);
-    // $this->dbforge->add_key('book_number', TRUE);
+    $this->dbforge->add_key('book_number', TRUE);
     
     
     /* Create the table (if it doesn't already exist) */

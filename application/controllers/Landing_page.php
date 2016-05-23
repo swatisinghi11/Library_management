@@ -72,12 +72,12 @@ class Landing_page extends CI_Controller {
 				    $ideal_return_date= $row->ideal_return_date;
 				    $actual_return_date= $row->actual_return_date;
 				    $fine= $row->fine;
-    				$current_student_issue_status=array("uuid"=>$uuid,"clg_id"=>$clg_id,"book_number"=>$book_number,"book_name"=>$book_name,"issue_date"=>$issue_date,"ideal_return_date"=>$ideal_return_date,"actual_return_date"=>$actual_return_date,"fine"=>$fine);
+    				$current_student_issue_status=array("uuid"=>$uuid,"clg_id"=>$clg_id,"book_number"=>$book_number,"book_name"=>$book_name,"issue_date"=>$issue_date,"ideal_return_date"=>$ideal_return_date,"actual_return_date"=>$actual_return_date,"fine"=>$fine,"i"=>$i);
     				$book_list[]=$current_student_issue_status;
     	}
 		    $dynamic_data['book_list']=$book_list;
 
-			$this->load->view('selected_student',$dynamic_data,$i);
+			$this->load->view('selected_student',$dynamic_data);
 
 		}
 
@@ -88,6 +88,11 @@ class Landing_page extends CI_Controller {
 	public function issue()
 		{
 			$this->load->view('issue');
+		}
+
+	public function return1()
+		{
+			$this->load->view('return1');
 		}
 
 	function __construct() 
@@ -237,6 +242,42 @@ class Landing_page extends CI_Controller {
 			$this->Students_library_model->create_table();
 			$this->Students_library_model->insert_row($all_data);
 			echo json_encode($all_data);
+
+		}
+
+
+	public function return_details()
+		{
+			$dsn ='mysqli://root:@localhost/legistifyphp';
+		    $dbconnect = $this->load->database($dsn);
+
+		    $this->load->model('Student_library_model');
+		    $return_info = array('uuid'=>$this->input->post('uuid'),'book_number'=>$this->input->post('book_number'));
+		    $entered_book_number= $return_info['book_number'];
+		    $entered_uuid= $return_info['uuid'];
+
+		    $query = $this->db->query('SELECT uuid,book_number,ideal_return_date, actual_return_date, fine FROM issue_return_details where book_number="'.$entered_book_number.'"');
+		    $row = $query->row();
+		    $book_number="none";
+		    $success=0;
+		    if($row){
+			    $uuid= $row->uuid;
+			    $ideal_return_date= $row->ideal_return_date;
+			    $actual_return_date= $row->actual_return_date;
+			    $book_number= $row->book_number;
+			    $fine= $row->fine;
+    			$success=1;
+    		}
+
+    		else{
+    			$success=0;
+    		}
+    		// $actual_return_date=date('d-m-Y');
+    		// $date_difference=$actual_return_date-$ideal_return_date;
+    		// "date_difference"=>$date_difference,
+    		$data=array("success"=>$success,"uuid"=>$uuid,"ideal_return_date"=>$ideal_return_date,"actual_return_date"=>$actual_return_date,"book_number"=>$book_number);
+
+			echo json_encode($data);
 
 		}
 }

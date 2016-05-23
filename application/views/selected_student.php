@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<div class="col-md-4">
 						<br>
-						<button type="submit" class="btn btn-info" style="width:100%" onclick="logout()"> Log Out</button>
+						<button type="submit" class="btn btn-info" style="width:100%" onclick="openURL(12)"> Log Out</button>
 					</div>
 				</div>
 				
@@ -78,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="row">
 		<div class="col-md-3"></div>
 		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
-			<p style="text-align:center;font-size:110%;">1</p>
+			<p style="text-align:center;font-size:110%;">'.$row["i"].'</p>
 		</div>
 		<div class="col-md-1" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:4em;border-bottom: thin solid #d3d3d3">
 			<p style="text-align:center;font-size:110%">'.$row["book_number"].'</p>
