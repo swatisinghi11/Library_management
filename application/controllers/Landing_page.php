@@ -251,7 +251,7 @@ class Landing_page extends CI_Controller {
 			$dsn ='mysqli://root:@localhost/legistifyphp';
 		    $dbconnect = $this->load->database($dsn);
 
-		    $this->load->model('Student_library_model');
+		    $this->load->model('Students_library_model');
 		    $return_info = array('uuid'=>$this->input->post('uuid'),'book_number'=>$this->input->post('book_number'));
 		    $entered_book_number= $return_info['book_number'];
 		    $entered_uuid= $return_info['uuid'];
@@ -262,20 +262,33 @@ class Landing_page extends CI_Controller {
 		    $success=0;
 		    if($row){
 			    $uuid= $row->uuid;
-			    $ideal_return_date= $row->ideal_return_date;
-			    $actual_return_date= $row->actual_return_date;
-			    $book_number= $row->book_number;
-			    $fine= $row->fine;
+			    $book_number = $row->book_number;
+			    $ideal_return_date = $row->ideal_return_date;
+			    $actual_return_date = $row->actual_return_date;
+			    $fine = $row->fine;
     			$success=1;
     		}
 
     		else{
     			$success=0;
     		}
-    		// $actual_return_date=date('d-m-Y');
-    		// $date_difference=$actual_return_date-$ideal_return_date;
+    		$actual_return_date=date('d-m-Y');
+    		$date_difference=$actual_return_date-$ideal_return_date;
+    		if($date_difference<15)
+    		{
+    			$fine=0;
+    		}
+    		if($date_difference>15)
+    		{
+    			$fine=100;
+    		}
     		// "date_difference"=>$date_difference,
-    		$data=array("success"=>$success,"uuid"=>$uuid,"ideal_return_date"=>$ideal_return_date,"actual_return_date"=>$actual_return_date,"book_number"=>$book_number);
+    		$update_data=array("actual_return_date"=>$actual_return_date,"fine"=>$fine);
+    		$this->load->model('Students_library_model');
+			$this->Students_library_model->create_table();
+			$this->Students_library_model->update_fine($update_data);
+
+    		$data=array("success"=>$success,"date_difference"=>$date_difference,"uuid"=>$uuid,"ideal_return_date"=>$ideal_return_date,"actual_return_date"=>$actual_return_date,"book_number"=>$book_number);
 
 			echo json_encode($data);
 

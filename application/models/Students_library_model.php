@@ -26,10 +26,10 @@ class Students_library_model extends CI_Model {
         $this->db->insert('issue_return_details',$this);
   }  
 
-  // function update_booking($update_data){
-  //     $this->db->where('actual_return_date',$update_data["actual_return_date"]);
-  //     $this->db->where('fine',$update_data["fine"]);
-  // }
+  function update_fine($update_data){
+      $this->db->where('actual_return_date',$update_data["actual_return_date"]);
+      $this->db->where('fine',$update_data["fine"]);
+  }
 
   function create_table()
   { 
